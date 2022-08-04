@@ -1,0 +1,6 @@
+# Project exclude paths
+/venv/
+.env
+config.py
+start.sh
+/extentions/demo_checker/src
