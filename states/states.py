@@ -7,6 +7,12 @@ class Start(StatesGroup):
     Start_menu = State()
 
 
+class BTC(Start):
+    BTC_Digest = State()
+
+
+
+
 #class Mons(Start):
 #    Mons_menu = State()
 #
