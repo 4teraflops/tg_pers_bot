@@ -17,6 +17,7 @@ services:
       - mongoDB
 
   mongoDB:
+    container_name: mongoDB
     image: mongo:4.4.6
     restart: always
     ports:
