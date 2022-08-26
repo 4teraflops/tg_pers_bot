@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher
-from aiogram.contrib.fsm_storage.redis import RedisStorage2
+from aiogram.contrib.fsm_storage.mongo import MongoStorage
 from loguru import logger
 
 logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='DEBUG', rotation='10 MB', compression='zip')
@@ -16,6 +16,6 @@ access = os.getenv('ACCESS')
 # Параметры для прокси
 #PROXY_AUTH = aiohttp.BasicAuth(login=config.py.PROXY_USER, password=config.py.PROXY_PASS)
 bot = Bot(token)
-storage = RedisStorage2('tg_personal_bot', 6379, db=5)
+storage = MongoStorage(host='mongoDB', port=27017, db_name='aiogram_fsm')
 dp = Dispatcher(bot, storage=storage)
 

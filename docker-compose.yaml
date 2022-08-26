@@ -11,16 +11,13 @@ services:
     build: ./
     ports:
       - "8002:8002"
-      - "6379:6379"
     networks:
       - monitoring_stack_loki
+    depends_on:
+      - mongoDB
 
-#  cache:
-#    image: redis:6.2-alpine
-#    restart: always
-#    ports:
-#      - '6379:6379'
-#    command: redis-server --save 20 1 --loglevel warning
-#    networks:
-#      - monitoring_stack_loki
-#
+  mongoDB:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
