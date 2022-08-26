@@ -22,4 +22,9 @@ async def show_btc_menu(call: CallbackQuery, state: FSMContext):
            f'Asset : {dict_for_text["asset_actual_rub"]}\n' \
            f'Profit : {dict_for_text["profit_rub"]}\n' \
            f'Percent Profit : {dict_for_text["profit_percent"]}'
-    await call.message.answer(text=text)
+    # Меняем текст в сообщении и убираем клавиатуру
+    await bot.edit_message_text(chat_id=call.from_user.id, message_id=call.message.message_id, reply_markup='', text=text)
+    # Отправляем стартовое меню, чтоб оно всегла было внизу
+    text = 'Привет! Выбирай кнопку'
+    await call.message.answer(text=text, reply_markup=start_menu)
+
