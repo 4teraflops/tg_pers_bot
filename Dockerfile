@@ -5,7 +5,7 @@ WORKDIR /code
 # копирование файла зависимостей в рабочую директорию
 COPY /requirements.txt /code/requirements.txt
 # установка зависимостей
-RUN pip install -r requirements.txt
+RUN pip3 install -r /code/requirements.txt
 # копирование содержимого локальной директории src в рабочую директорию
 COPY /db/ /code
 COPY /handlers/ /code
