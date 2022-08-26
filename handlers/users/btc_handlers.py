@@ -4,7 +4,6 @@ from keyboards.inline.callback_datas import menu_callbacks
 from keyboards.inline.keyboards import start_menu
 from loader import dp, bot
 from states.states import Start, BTC
-from src.analyser import insert_in_analysis_table
 from loguru import logger
 import os
 from db.selector import collect_dict
@@ -24,6 +23,3 @@ async def show_btc_menu(call: CallbackQuery, state: FSMContext):
            f'Profit : {dict_for_text["profit_rub"]}\n' \
            f'Percent Profit : {dict_for_text["profit_percent"]}'
     await call.message.answer(text=text)
-    # В анализ
-    insert_in_analysis_table(call.from_user.id, call.from_user.first_name, call.from_user.last_name,
-                             call.from_user.username, call.data.split(':')[1])

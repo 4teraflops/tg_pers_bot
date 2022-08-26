@@ -1,5 +1,3 @@
-import psycopg2
-from src import config
 from loguru import logger
 from db import client
 

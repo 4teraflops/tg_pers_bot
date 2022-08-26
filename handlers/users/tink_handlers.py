@@ -1,13 +1,9 @@
 from aiogram.dispatcher import FSMContext
 from aiogram.types import CallbackQuery
 from keyboards.inline.callback_datas import menu_callbacks
-from keyboards.inline.keyboards import start_menu
-from loader import dp, bot
-from states.states import Start, BTC
-from src.analyser import insert_in_analysis_table
+from loader import dp
+from states.states import Start
 from loguru import logger
-import os
-from db.selector import collect_dict
 from src.services_manager import get_data_from_tink
 
 
@@ -21,7 +17,3 @@ async def show_tink_digest(call: CallbackQuery, state: FSMContext):
     text = await get_data_from_tink()
 
     await call.message.answer(text=text)
-
-    # В анализ
-    insert_in_analysis_table(call.from_user.id, call.from_user.first_name, call.from_user.last_name,
-                             call.from_user.username, call.data.split(':')[1])

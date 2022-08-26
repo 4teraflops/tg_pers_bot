@@ -34,9 +34,9 @@ def check_database():
 
         for table in tables:
             res.append(table[0])
+
 #    if 'table_name' not in res:
         return 'OK'
 
     except psycopg2.OperationalError as e:
         return f'some operational error: {e}'
-

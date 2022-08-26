@@ -5,7 +5,6 @@ from keyboards.inline.keyboards import start_menu
 from loader import dp
 from states.states import Start
 from loguru import logger
-from src.analyser import insert_in_analysis_table
 from loader import access
 
 logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='DEBUG', rotation='10 MB', compression='zip')
@@ -50,13 +49,7 @@ async def auth(message: Message, state: FSMContext):
         text = 'Привет! Выбирай кнопку'
         await message.answer(text=text, reply_markup=start_menu)
         await Start.Start_menu.set()
-        # В анализ
-        insert_in_analysis_table(message.from_user.id, message.from_user.first_name, message.from_user.last_name,
-                                 message.from_user.username, 'login_Success')
     else:
         await message.answer_video(video='BAACAgIAAxkBAAMuYuu8wDrG8ctliC_7upWnLDHwlRcAAsgYAAL_s2FL6cqy1UcDE9YpBA')
-        # В анализ
-        insert_in_analysis_table(message.from_user.id, message.from_user.first_name, message.from_user.last_name,
-                                 message.from_user.username, 'login_Error')
 
 
