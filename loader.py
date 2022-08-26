@@ -9,10 +9,10 @@ logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='
 
 # Храним чувствительные данные в переменной окружения
 load_dotenv()
-token = os.getenv('token')
-webhook_url = os.getenv('webhook_url')
-admin_id = os.getenv('admin_id')
-access = os.getenv('access')
+token = os.getenv('TOKEN')
+webhook_url = os.getenv('WEBHOOK_URL')
+admin_id = os.getenv('ADMIN_ID')
+access = os.getenv('ACCESS')
 # Параметры для прокси
 #PROXY_AUTH = aiohttp.BasicAuth(login=config.py.PROXY_USER, password=config.py.PROXY_PASS)
 bot = Bot(token)
