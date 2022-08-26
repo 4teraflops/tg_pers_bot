@@ -3,10 +3,10 @@ FROM python:3.9
 # установка рабочей директории в контейнере
 WORKDIR /code
 # копирование файла зависимостей в рабочую директорию
-COPY /requirements.txt /code/requirements.txt/
+COPY .requirements.txt /code/requirements.txt/
 # установка зависимостей
 RUN pip3 install -r /code/requirements.txt
-# копирование содержимого локальной директории src в рабочую директорию
+# копирование содержимого локальнх директорий в рабочую директорию
 COPY /db/ /code
 COPY /handlers/ /code
 COPY /keyboards/ /code
