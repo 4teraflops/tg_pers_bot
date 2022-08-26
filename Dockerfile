@@ -17,6 +17,8 @@ COPY .env .
 COPY app.py .
 COPY loader.py .
 
+EXPOSE 8002
 
 # команда, выполняемая при запуске контейнера
 CMD [ "python", "./app.py" ]
+

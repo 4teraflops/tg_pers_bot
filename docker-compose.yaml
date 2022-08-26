@@ -1,0 +1,19 @@
+version: "3"
+
+networks:
+  monitoring_stack_loki:
+    external: true
+
+services:
+  tg_personal_bot:
+    container_name: tg_personal_bot
+    restart: always
+    build: ./
+    ports:
+      - "8002:8002"
+    links:
+      - fin_postgresql_db:fin_postgresql_db
+    depends_on:
+      - fin_postgresql_db
+    networks:
+      - monitoring_stack_loki
