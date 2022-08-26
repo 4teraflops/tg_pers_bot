@@ -10,9 +10,9 @@ RUN pip3 install -r code/requirements.txt
 COPY /db/ /code/db/
 COPY /handlers/ /code/handlers/
 COPY /keyboards/ /code/keyboards/
-COPY /log/ /code/log/
+COPY /log /code/log/
 COPY /src/ /code/src/
-COPY /states/ /code/states/
+COPY /states /code/states/
 COPY /.env /code/.env
 COPY /app.py /code/app.py
 COPY /loader.py /code/loader.py
