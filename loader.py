@@ -16,6 +16,6 @@ access = os.getenv('ACCESS')
 # Параметры для прокси
 #PROXY_AUTH = aiohttp.BasicAuth(login=config.py.PROXY_USER, password=config.py.PROXY_PASS)
 bot = Bot(token)
-storage = RedisStorage2('127.0.0.1', 6379, db=5)
+storage = RedisStorage2('cache', 6379, db=5)
 dp = Dispatcher(bot, storage=storage)
 
