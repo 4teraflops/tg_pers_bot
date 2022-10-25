@@ -1,12 +1,9 @@
-import subprocess
 from loader import webhook_url, admin_id
 import requests
 import json
-import asyncio
-import sys
 import os
 from dotenv import load_dotenv
-from tinkoff.invest import AsyncClient, PositionsResponse
+from tinkoff.invest import AsyncClient
 
 
 def do_alarm(t_alarmtext):
@@ -36,16 +33,13 @@ async def get_data_from_tink():
             expected_yield = account_portfolio.expected_yield.units
             expected_yields.append(expected_yield)
 
-        if expected_yields[0] > 0:
-            text = f'Брокерский счет: {amounts[0]}, {expected_yields[0]}\n' \
-                   f'Антикризисный счет: {amounts[1]}, {expected_yields[1]}\n' \
-                   f'Общая сумма: {sum(amounts)}'
+        sum_without_profit = amounts[0] / (100 + expected_yields[0]) * 100 + amounts[1] / (100 + expected_yields[1]) * 100
+        sum_with_profit = sum(amounts)
 
-            return text
+        total_profit_percent = round((sum_with_profit - sum_without_profit)*100/sum_without_profit, 2)
 
-        else:
-            text = f'Брокерский счет: {amounts[0]}, {expected_yields[0]}\n' \
-                   f'Антикризисный счет: {amounts[1]}, {expected_yields[1]}\n' \
-                   f'Общая сумма: {sum(amounts)}'
+        text = f'Брокерский счет: {amounts[0]}, {expected_yields[0]}%\n' \
+               f'Антикризисный счет: {amounts[1]}, {expected_yields[1]}%\n' \
+               f'Общая сумма: {sum(amounts)}, {total_profit_percent}%'
 
-            return text
+        return text
