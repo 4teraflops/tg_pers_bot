@@ -44,12 +44,13 @@ async def auth(message: Message, state: FSMContext):
     await state.get_state()
     user_phone = message.contact.phone_number
     await state.update_data(Phone=user_phone)  # Запомним телефон клиента
-    #logger.info(f'user_phone:{user_phone}')
     if user_phone == access:
         text = 'Привет! Выбирай кнопку'
         await message.answer(text=text, reply_markup=start_menu)
         await Start.Start_menu.set()
     else:
+        logger.info(f'user_phone: {user_phone}')
+        logger.info(f'assess: {access}')
         await message.answer_video(video='BAACAgIAAxkBAAMuYuu8wDrG8ctliC_7upWnLDHwlRcAAsgYAAL_s2FL6cqy1UcDE9YpBA')
 
 
