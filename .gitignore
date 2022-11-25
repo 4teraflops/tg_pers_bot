@@ -1,6 +1,5 @@
 # Project exclude paths
-/venv/
+/venv
 .env
 */log/*
-/src/db.sqlite
 /src/config.py

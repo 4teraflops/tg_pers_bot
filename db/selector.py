@@ -1,7 +1,7 @@
 from loguru import logger
 from db import client
 
-logger.add(f'log/{__name__}.log', format='{time} {level} {message}', level='INFO', rotation='10 MB', compression='zip')
+logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='INFO', rotation='10 MB', compression='zip')
 
 
 def get_metrics_from_actual_price():

@@ -11,6 +11,12 @@ class BTC(Start):
     BTC_Digest = State()
 
 
+class Tink(Start):
+    Tink_Digest = State()
+
+
+class DailyPool(Start):
+    Start_Daily_Pool = State()
 
 
 #class Mons(Start):

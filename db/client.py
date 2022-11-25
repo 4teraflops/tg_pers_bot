@@ -2,7 +2,7 @@ import psycopg2
 from src import config
 from loguru import logger
 
-logger.add(f'log/{__name__}.log', format='{time} {level} {message}', level='INFO', rotation='10 MB', compression='zip')
+logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='INFO', rotation='10 MB', compression='zip')
 
 
 def get_connection():
