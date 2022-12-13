@@ -2,7 +2,7 @@ from aiogram.dispatcher import FSMContext
 from aiogram.types import CallbackQuery
 from keyboards.inline.callback_datas import menu_callbacks
 from loader import dp, bot
-from states.states import Start
+from states.states import Start, Tink
 from loguru import logger
 from src.services_manager import get_data_from_tink
 from keyboards.inline.keyboards import start_menu
@@ -21,3 +21,5 @@ async def show_tink_digest(call: CallbackQuery, state: FSMContext):
     # Отправляем стартовое меню, чтоб оно всегла было внизу
     text = 'Привет! Выбирай кнопку'
     await call.message.answer(text=text, reply_markup=start_menu)
+
+    #await Tink.Tink_Digest.set()

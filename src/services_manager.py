@@ -6,12 +6,6 @@ from dotenv import load_dotenv
 from tinkoff.invest import AsyncClient
 
 
-def do_alarm(t_alarmtext):
-    headers = {"Content-type": "application/json"}
-    payload = {"text": f"{t_alarmtext}", "chat_id": f"{admin_id}"}
-    requests.post(url=webhook_url, data=json.dumps(payload), headers=headers)
-
-
 async def get_data_from_tink():
     load_dotenv()
     token = os.getenv('API_KEY')
@@ -43,3 +37,4 @@ async def get_data_from_tink():
                f'Общая сумма: {sum(amounts)}, {total_profit_percent}%'
 
         return text
+

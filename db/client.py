@@ -1,17 +1,17 @@
 import psycopg2
-from src import config
+from src import posgresql_config
 from loguru import logger
 
-logger.add(f'log/{__name__}.log', format='{time} {level} {message}', level='INFO', rotation='10 MB', compression='zip')
+logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='INFO', rotation='10 MB', compression='zip')
 
 
 def get_connection():
-    database = config.db_name
+    database = posgresql_config.db_name
     conn = psycopg2.connect(
-        user=f"{config.db_user}",
-        password=f"{config.db_password}",
-        host=f"{config.db_host}",
-        port=f"{config.db_port}",
+        user=f"{posgresql_config.db_user}",
+        password=f"{posgresql_config.db_password}",
+        host=f"{posgresql_config.db_host}",
+        port=f"{posgresql_config.db_port}",
         database=f'{database}'
     )
     conn.autocommit = True

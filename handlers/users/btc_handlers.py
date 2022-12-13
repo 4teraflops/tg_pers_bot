@@ -5,7 +5,6 @@ from keyboards.inline.keyboards import start_menu
 from loader import dp, bot
 from states.states import Start, BTC
 from loguru import logger
-import os
 from db.selector import collect_dict
 
 
@@ -27,4 +26,3 @@ async def show_btc_menu(call: CallbackQuery, state: FSMContext):
     # Отправляем стартовое меню, чтоб оно всегла было внизу
     text = 'Привет! Выбирай кнопку'
     await call.message.answer(text=text, reply_markup=start_menu)
-

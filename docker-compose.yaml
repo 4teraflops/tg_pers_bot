@@ -1,8 +1,8 @@
 version: "3"
 
 networks:
-  monitoring_stack_loki:
-    external: true
+  mongodb_local_DBs:
+      external: true
 
 services:
   tg_personal_bot:
@@ -12,15 +12,4 @@ services:
     ports:
       - "8002:8002"
     networks:
-      - monitoring_stack_loki
-    depends_on:
-      - mongoDB
-
-  mongoDB:
-    container_name: mongoDB
-    image: mongo:4.4.6
-    restart: always
-    ports:
-      - "27017:27017"
-    networks:
-      - monitoring_stack_loki
+      - mongodb_local_DBs

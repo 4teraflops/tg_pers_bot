@@ -11,25 +11,5 @@ class BTC(Start):
     BTC_Digest = State()
 
 
-
-
-#class Mons(Start):
-#    Mons_menu = State()
-#
-#
-#class ACQPC(Mons):
-#    Tools = State()
-#    Manage = State()
-#
-#
-#class Postmon(Mons):
-#    Tools = State()
-#    Manage = State()
-#
-#
-#class NewsPoster(Start):
-#    Choise_command = State()
-#
-#
-#class DemoChecker(Start):
-#    Methods = State()
+class Tink(Start):
+    Tink_Digest = State()

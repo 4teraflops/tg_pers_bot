@@ -39,7 +39,7 @@ async def lost_state(call: CallbackQuery, state: FSMContext):
     await Start.Auth.set()
 
 
-@dp.message_handler(content_types=ContentTypes.CONTACT, state=Start.Auth)
+@dp.message_handler(content_types=ContentTypes.CONTACT, state=Start.Auth)  # Ловим пошаренный контакт
 async def auth(message: Message, state: FSMContext):
     await state.get_state()
     user_phone = message.contact.phone_number
@@ -49,8 +49,8 @@ async def auth(message: Message, state: FSMContext):
         await message.answer(text=text, reply_markup=start_menu)
         await Start.Start_menu.set()
     else:
-        logger.info(f'user_phone: {user_phone}')
-        logger.info(f'assess: {access}')
+        #logger.info(f'user_phone: {user_phone}')
+        #logger.info(f'assess: {access}')
         await message.answer_video(video='BAACAgIAAxkBAAMuYuu8wDrG8ctliC_7upWnLDHwlRcAAsgYAAL_s2FL6cqy1UcDE9YpBA')
 
 

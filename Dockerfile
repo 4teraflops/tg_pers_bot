@@ -1,21 +1,20 @@
 # установка базового образа (host OS)
 FROM python:3.9
 # установка рабочей директории в контейнере
-WORKDIR /code
+WORKDIR .
 # копирование файла зависимостей в рабочую директорию
-COPY /requirements.txt code/requirements.txt
+COPY requirements.txt .
 # установка зависимостей
-RUN pip3 install -r code/requirements.txt
-# копирование содержимого локальнх директорий в рабочую директорию
-COPY /db/ /code/db/
-COPY /handlers/ /code/handlers/
-COPY /keyboards/ /code/keyboards/
-COPY log/ /code/log/
-COPY /src/ /code/src/
-COPY /states /code/states/
-COPY /.env /code/.env
-COPY /app.py /code/app.py
-COPY /loader.py /code/loader.py
+RUN pip3 install -r requirements.txt
+# копирование содержимого локальной директории src в рабочую директорию
+COPY /db ./db
+COPY /handlers ./handlers
+COPY /keyboards ./keyboards
+COPY /src  ./src
+COPY /states ./states
+COPY /.env .
+COPY /app.py .
+COPY /loader.py .
 
 EXPOSE 8002
 

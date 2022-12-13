@@ -22,3 +22,12 @@
 2022-08-04T17:06:36.811060+0500 INFO user_phone:79655574499
 2022-08-04T17:47:51.619392+0500 INFO user_phone:+79655574499
 2022-08-04T22:32:17.119893+0500 INFO dict_for_text: {'btc_rub': '1393600.02', 'btc_usd': '23127.22', 'asset_actual_rub': '23062.74', 'profit_rub': '-28818.33', 'profit_percent': '-55.74'}
+2022-11-26T01:32:48.827584+0500 DEBUG datetime: <class 'datetime.time'>
+2022-11-26T01:38:04.318874+0500 DEBUG datetime: <class 'datetime.time'>
+2022-11-26T02:26:41.013279+0500 INFO user_phone: +79655574499
+2022-11-26T02:26:41.014693+0500 INFO assess: ['+79655574499','']
+2022-11-26T02:31:40.230764+0500 INFO test: ['232', 'dfgdfg', '343']
+2022-11-26T02:31:55.795438+0500 INFO test: [
+2022-12-08T21:23:46.742198+0500 ERROR Other except error Exception
+2022-12-08T21:26:38.698228+0500 ERROR Other except error Exception
+2022-12-08T21:30:04.839341+0500 ERROR Other except error Exception
