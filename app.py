@@ -1,7 +1,4 @@
-from loader import bot
 from loader import logger
-import asyncio
-import aioschedule
 
 
 async def on_shutdown(dp):

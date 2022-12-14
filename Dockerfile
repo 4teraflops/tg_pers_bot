@@ -10,7 +10,7 @@ RUN pip3 install -r requirements.txt
 COPY /db ./db
 COPY /handlers ./handlers
 COPY /keyboards ./keyboards
-COPY /src  ./src
+COPY /src/services_manager.py  ./src/services_manager.py
 COPY /states ./states
 COPY /.env .
 COPY /app.py .

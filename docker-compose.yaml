@@ -1,8 +1,8 @@
 version: "3"
 
 networks:
-  mongodb_local_DBs:
-      external: true
+  mongodb_dbs:
+    external: true
 
 services:
   tg_personal_bot:
@@ -12,4 +12,4 @@ services:
     ports:
       - "8002:8002"
     networks:
-      - mongodb_local_DBs
+      - mongodb_dbs
