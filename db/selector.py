@@ -34,7 +34,7 @@ def get_data_from_profit():
 
     for m in metrics_from_profit:
         cursor.execute(
-            f'SELECT {m} FROM profit ORDER BY timestamp LIMIT 1'
+            f'SELECT {m} FROM profit ORDER BY timestamp DESC LIMIT 1'
         )
         data = str(cursor.fetchall()[0][0])
         data_from_profit.append(data)

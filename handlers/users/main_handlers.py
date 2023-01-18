@@ -49,8 +49,8 @@ async def auth(message: Message, state: FSMContext):
         await message.answer(text=text, reply_markup=start_menu)
         await Start.Start_menu.set()
     else:
-        logger.info(f'user_phone: {user_phone}')
-        logger.info(f'assess: {access}')
+        #logger.info(f'user_phone: {user_phone}')
+        #logger.info(f'assess: {access}')
         await message.answer_video(video='BAACAgIAAxkBAAMuYuu8wDrG8ctliC_7upWnLDHwlRcAAsgYAAL_s2FL6cqy1UcDE9YpBA')
 
 
