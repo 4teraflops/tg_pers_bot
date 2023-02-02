@@ -13,9 +13,10 @@ token = os.getenv('TOKEN')
 webhook_url = os.getenv('WEBHOOK_URL')
 admin_id = os.getenv('ADMIN_ID')
 access = os.getenv('ACCESS')
+access1 = os.getenv('ACCESS1')
 # Параметры для прокси
 #PROXY_AUTH = aiohttp.BasicAuth(login=config.py.PROXY_USER, password=config.py.PROXY_PASS)
 bot = Bot(token)
-storage = MongoStorage(host='mongoDB', port=27017, db_name='aiogram_fsm')
+storage = MongoStorage(host='localhost', port=27017, db_name='aiogram_fsm', username='mongo', password='sfgh1f5s4h641yjy')
 dp = Dispatcher(bot, storage=storage)
 

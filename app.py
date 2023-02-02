@@ -14,7 +14,7 @@ if __name__ == '__main__':
     from handlers import dp
 
     try:
-        executor.start_polling(dp)#, on_shutdown=on_shutdown)
+        executor.start_polling(dp, on_shutdown=on_shutdown)
     except KeyboardInterrupt:
         print('Вы завершили работу программы collector')
         logger.info('Program has been stop manually')

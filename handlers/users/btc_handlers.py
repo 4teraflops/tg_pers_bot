@@ -5,7 +5,6 @@ from keyboards.inline.keyboards import start_menu
 from loader import dp, bot
 from states.states import Start, BTC
 from loguru import logger
-import os
 from db.selector import collect_dict
 
 
