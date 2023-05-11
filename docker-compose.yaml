@@ -13,5 +13,3 @@ services:
       - "8002:8002"
     networks:
       - monitoring_stack_loki
-    depends_on:
-      - mongoDB
