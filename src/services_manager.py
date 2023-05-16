@@ -1,17 +1,18 @@
-from loader import webhook_url, admin_id
-import requests
-import json
 import os
 from dotenv import load_dotenv
 from tinkoff.invest import AsyncClient
+from loguru import logger
+
+logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='INFO', rotation='10 MB', compression='zip')
 
 
 async def get_data_from_tink():
+
     load_dotenv()
     token = os.getenv('API_KEY')
     br_account_id = os.getenv('BR_ACCOUNT_ID')
     anti_cry_account_id = os.getenv('ANTI_CRY_ACCOUNT_ID')
-
+    logger.info(f'anti_cry_account_id: {anti_cry_account_id}')
     amounts = []
     expected_yields = []
 

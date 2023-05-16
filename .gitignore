@@ -3,5 +3,4 @@
 .env
 */log/*
 /src/posgresql_config.py
-docker-compose.yaml
 
