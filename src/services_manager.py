@@ -12,7 +12,6 @@ async def get_data_from_tink():
     token = os.getenv('API_KEY')
     br_account_id = os.getenv('BR_ACCOUNT_ID')
     anti_cry_account_id = os.getenv('ANTI_CRY_ACCOUNT_ID')
-    logger.info(f'anti_cry_account_id: {anti_cry_account_id}')
     amounts = []
     expected_yields = []
 
