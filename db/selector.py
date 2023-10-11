@@ -24,6 +24,7 @@ def get_data_from_asset():
         'SELECT asset_sum FROM asset ORDER BY check_datetime DESC LIMIT 1'
     )
     asset_sum = cursor.fetchall()[0][0]
+    cursor.commit()
     return round((asset_sum), 6)
 
 

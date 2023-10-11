@@ -1,7 +1,7 @@
 version: "3"
 
 networks:
-  mongodb_dbs:
+  monitoring_stack_loki:
     external: true
 
 services:
@@ -12,4 +12,4 @@ services:
     ports:
       - "8002:8002"
     networks:
-      - mongodb_dbs
+      - monitoring_stack_loki
