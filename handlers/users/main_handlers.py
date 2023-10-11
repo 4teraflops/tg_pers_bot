@@ -5,7 +5,7 @@ from keyboards.inline.keyboards import start_menu
 from loader import dp
 from states.states import Start
 from loguru import logger
-from loader import access, access1
+from loader import access
 
 logger.add(f'src/log/{__name__}.log', format='{time} {level} {message}', level='DEBUG', rotation='10 MB', compression='zip')
 
@@ -44,7 +44,7 @@ async def auth(message: Message, state: FSMContext):
     await state.get_state()
     user_phone = message.contact.phone_number
     await state.update_data(Phone=user_phone)  # Запомним телефон клиента
-    if user_phone == access or user_phone == access1:
+    if user_phone == access:
         text = 'Привет! Выбирай кнопку'
         await message.answer(text=text, reply_markup=start_menu)
         await Start.Start_menu.set()
@@ -52,3 +52,5 @@ async def auth(message: Message, state: FSMContext):
         #logger.info(f'user_phone: {user_phone}')
         #logger.info(f'assess: {access}')
         await message.answer_video(video='BAACAgIAAxkBAAMuYuu8wDrG8ctliC_7upWnLDHwlRcAAsgYAAL_s2FL6cqy1UcDE9YpBA')
+
+
